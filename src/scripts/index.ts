@@ -1,2 +1,2 @@
-import { Fields } from "./components/fields";
+import { Fields } from "./components/fields.js";
 new Fields();
