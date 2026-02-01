@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag&Drop Architecture</title>
+  <script type="module" src="./scripts/index.js"></script>
+</head>
+<body>
+    <template id="fields">
+        <form action="">
+            <div class="form-control">
+                <label for="title">title</label>
+                <input id="title" type="text">
+            </div>
+              <div class="form-control">
+                <label for="desc">description</label>
+                <input id="desc" type="text">
+            </div>
+       <button class="btn">add project</button>
+        </form>
+
+    </template>
+    <template id="list">
+        <div class="projects">
+            <h1 class="title">title</h1>
+            <ul></ul>
+        </div>
+
+    </template>
+    <div id="app">
+
+    </div>
+</body>
+</html>
