@@ -1,4 +1,4 @@
-import { base } from "./Base";
+import { base } from "./Base.js";
 
 export class Fields extends base<HTMLDivElement> {
 

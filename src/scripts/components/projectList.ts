@@ -1,10 +1,10 @@
-import { base } from "./Base";
+import { base } from "./Base.js";
 
 export class projects extends base<HTMLDivElement> {
     
     constructor(private _status: 'initial' | 'active' | 'finished') {
     
-      super('project-list', 'app', false, `${_status}-projects`);
+      super('list', 'app', false, `${_status}-projects`);
       this.renderProjects();
     }
     private renderProjects(): void {

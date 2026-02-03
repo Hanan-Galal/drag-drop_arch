@@ -1,7 +1,5 @@
-export declare class Fields {
-    private _template;
-    private _form;
-    private _hostElement;
+import { base } from "./Base.js";
+export declare class Fields extends base<HTMLDivElement> {
     constructor();
 }
 //# sourceMappingURL=fields.d.ts.map

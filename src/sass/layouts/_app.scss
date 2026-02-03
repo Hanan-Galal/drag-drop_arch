@@ -1,0 +1,11 @@
+#app {
+  min-height: 100vh;
+  display: flex;
+    align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  overflow: auto;
+  background-image: url("./images/home_bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

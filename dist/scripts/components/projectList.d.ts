@@ -1,8 +1,6 @@
-export declare class projects {
+import { base } from "./Base.js";
+export declare class projects extends base<HTMLDivElement> {
     private _status;
-    private _template;
-    private _projectsContainer;
-    private _hostElement;
     constructor(_status: 'initial' | 'active' | 'finished');
     private renderProjects;
 }
