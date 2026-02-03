@@ -1,0 +1,19 @@
+@use '../vars/variables' as *;
+@use '../vars/raduis' as *;
+.projects{
+    max-width: 300px;
+   min-width: 230px;
+   text-align: center;
+    margin: 10px;
+
+   .title-header{
+    background-color: $bg-main-c;
+    padding: 10px ;
+    border-radius: $small-r ;
+    .title{
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+}
+}

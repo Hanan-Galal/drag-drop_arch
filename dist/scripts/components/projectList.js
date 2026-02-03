@@ -1,7 +1,7 @@
 import { base } from "./Base.js";
 export class projects extends base {
     constructor(_status) {
-        super('list', 'app', true, `${_status}-projects`);
+        super('list', 'app', false, `${_status}-projects`);
         this._status = _status;
         this.renderProjects();
     }
