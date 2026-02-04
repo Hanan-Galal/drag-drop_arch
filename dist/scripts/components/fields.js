@@ -29,12 +29,10 @@ export class Fields extends base {
         const titleErrorMessage = handleValidationErrors(titleInputRule);
         const descErrorMessage = handleValidationErrors(descInputRule);
         if (titleErrorMessage.length > 0) {
-            alert(titleErrorMessage);
-            return false;
+            window.alert(titleErrorMessage);
         }
         if (descErrorMessage.length > 0) {
-            alert(descErrorMessage);
-            return false;
+            window.alert(descErrorMessage);
         }
         return true;
     }

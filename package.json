@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "lite-server": "^2.6.1",
     "typescript": "^5.9.3"
   },
@@ -13,4 +14,3 @@
     "sass": "sass --watch src/scss:dist/main.css"
   }
 }
-
