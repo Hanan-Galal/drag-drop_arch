@@ -21,10 +21,10 @@ export const handleValidationErrors = (InputRule) => {
         errorMessage += `This field ${InputRule.type} is required.\n`;
     }
     if (InputRule.minLength && InputRule.minLength > InputRule.value.trim().length) {
-        errorMessage += `This field ${InputRule.type} must be at least ${InputRule.minLength} characters long.\n`;
+        errorMessage += `This field ${InputRule.type} must be at least ${InputRule.minLength} characters`;
     }
     if (InputRule.maxLength && InputRule.maxLength < InputRule.value.trim().length) {
-        errorMessage += `This field ${InputRule.type} must be at most ${InputRule.maxLength} characters long.\n`;
+        errorMessage += `This field ${InputRule.type} must be at most ${InputRule.maxLength} characters`;
     }
     return errorMessage;
 };

@@ -1,3 +1,4 @@
+import { projectState } from "../store/ProjectState.js";
 import { assignValidationInputs, handleValidationErrors } from "../utils/validation/validation_helpers.js";
 import { base } from "./Base.js";
 
@@ -17,7 +18,7 @@ export class Fields extends base<HTMLDivElement> {
         const [titleValue, descValue] = this._getInputValues(titleInput, descInput);
 
         if (this._validateInputValues(titleValue, descValue)) {
-            console.log('Title:', titleValue);
+            projectState.createProject(titleValue, descValue);
         }
     }
 
@@ -35,14 +36,18 @@ export class Fields extends base<HTMLDivElement> {
         const [titleInputRule, descInputRule] = assignValidationInputs(titleValue, descValue);
         const titleErrorMessage = handleValidationErrors(titleInputRule);
         const descErrorMessage = handleValidationErrors(descInputRule);
-
+        const popup_container=document.getElementById('popup_container')! as HTMLDivElement;
+        const descPopup=document.getElementById('popup_desc')! as HTMLParagraphElement;
         if (titleErrorMessage.length > 0) {
-        window.alert(titleErrorMessage);
-            
+            popup_container.classList.add('visible_popup');
+            descPopup.textContent=titleErrorMessage;
+            return false;
         }
 
-        if (descErrorMessage.length > 0) {
-            window.alert(descErrorMessage);
+       else if(descErrorMessage.length > 0) {
+            popup_container.classList.add('visible_popup');
+            descPopup.textContent=descErrorMessage;
+            return false;
         }
 
         return true;

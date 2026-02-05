@@ -76,12 +76,15 @@ var Fields = exports.Fields = /*#__PURE__*/function (_base) {
         descInputRule = _assignValidationInpu2[1];
       var titleErrorMessage = (0, _validation_helpers.handleValidationErrors)(titleInputRule);
       var descErrorMessage = (0, _validation_helpers.handleValidationErrors)(descInputRule);
+      var popup_container = document.getElementById('popup_container');
+      var descPopup = document.querySelector('.popup_desc');
       if (titleErrorMessage.length > 0) {
-        alert(titleErrorMessage);
+        popup_container.classList.add('visible_popup');
+        descPopup.textContent = titleErrorMessage;
         return false;
-      }
-      if (descErrorMessage.length > 0) {
-        alert(descErrorMessage);
+      } else if (descErrorMessage.length > 0) {
+        popup_container.classList.add('visible_popup');
+        descPopup.textContent = descErrorMessage;
         return false;
       }
       return true;

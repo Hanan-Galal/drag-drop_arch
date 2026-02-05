@@ -6,7 +6,6 @@ export class base<T extends HTMLElement>  {
     constructor(
         private _templateId: string,
         private _hostElementId: string, 
-        
         private _postionElementStart: boolean,
          private _elementId: string,
        

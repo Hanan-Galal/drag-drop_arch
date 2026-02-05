@@ -1,0 +1,54 @@
+@use "../vars/variables" as *;
+@use "../vars/_raduis.scss" as *;   
+
+.popup_container {
+    position: fixed;
+    inset: 0;
+    background-color:$bg-second-c;
+    display: none;
+    z-index: 1000;
+    place-items: center;
+    .popup {
+        min-width: 270px;
+        max-width: 300px;
+        background-color: $bg-main-c;
+        padding: 3px 10px 10px 10px;
+        border-radius: $medium-r;
+        .popup_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid $border-c;
+            padding: 10px 0;
+            color: $error-c;
+            
+            .close {
+                background-color: initial;
+               
+                font-size: 20px;
+                cursor: pointer;
+                color: $text-main-c;
+                position: relative;
+                display: grid  ;
+                place-items: center;
+                &:hover{
+                    color: $error-c;
+
+                }
+                   
+            }
+        }
+        .content{
+            padding: 16px 0;
+            #popup_desc{
+                font-size: 14px;
+                color: $error-c;
+                width: 100%;
+            }
+        }
+
+    }
+}
+.visible_popup{
+    display: grid !important;
+}
