@@ -1,7 +1,7 @@
 export var projectStatus;
 (function (projectStatus) {
-    projectStatus[projectStatus["intial"] = 0] = "intial";
-    projectStatus[projectStatus["Active"] = 1] = "Active";
-    projectStatus[projectStatus["Finished"] = 2] = "Finished";
+    projectStatus[projectStatus["initial"] = 0] = "initial";
+    projectStatus[projectStatus["active"] = 1] = "active";
+    projectStatus[projectStatus["finished"] = 2] = "finished";
 })(projectStatus || (projectStatus = {}));
 //# sourceMappingURL=project-status.js.map

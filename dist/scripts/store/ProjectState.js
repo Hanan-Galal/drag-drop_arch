@@ -12,7 +12,7 @@ class ProjectState {
         return this._instance;
     }
     createProject(title, description) {
-        const newProject = new ProjectRules(Math.random().toString(), title, description, projectStatus.intial);
+        const newProject = new ProjectRules(Math.random().toString(), title, description, projectStatus.initial);
         this._projects.push(newProject);
         this._runListeners();
     }

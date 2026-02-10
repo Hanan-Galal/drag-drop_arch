@@ -4,6 +4,7 @@ export class ProjectRules {
         this.title = title;
         this.description = description;
         this.status = status;
+        this.id = ID;
     }
 }
 //# sourceMappingURL=ProjectRules.js.map

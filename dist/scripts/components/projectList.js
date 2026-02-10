@@ -1,5 +1,7 @@
 import { ProjectRules } from "../store/ProjectRules.js";
 import { projectState } from "../store/ProjectState.js";
+import { projectStatus } from "../utils/project-status.js";
+import { Project } from "./project.js";
 import { base } from "./Base.js";
 export class projects extends base {
     constructor(_status) {
@@ -7,30 +9,40 @@ export class projects extends base {
         this._status = _status;
         this.renderProjectsList();
         projectState.pushListener((projects) => {
-            this.renderProjects(projects);
+            const filteredProjects = this._filterProjectsStatus(projects);
+            this.renderProjects(filteredProjects);
         });
     }
     renderProjectsList() {
         const title = this._element.querySelector('.title');
         title.textContent = this._status;
         const list = this._element.querySelector('ul');
-        list.classList.add(this._status + '-projects');
+        list.id = `${this._status}-list`;
+        title.textContent = `${this._status} Projects`;
     }
     renderProjects(projects) {
-        const projectList = this._element.querySelector(`.${this._status}-projects`);
+        const projectList = document.getElementById(`${this._status}-list`);
         projectList.innerHTML = '';
         for (const project of projects) {
-            const content = this._createProjectItem(project);
-            projectList.innerHTML += content;
+            new Project(`${this._status}-list`, project);
         }
     }
-    _createProjectItem(project) {
-        const content = `
-    <div class='project'draggable="true" >
-    <h2 class="project_title" id="project_title">${project.title}</h2>
-    <p class="project_desc" id="project_desc">${project.description}</p>
-    </div>`;
-        return content;
+    _filterProjectsStatus(projects) {
+        const filteredProjects = projects.filter((project) => {
+            if (this._status === 'initial') {
+                return project.status === projectStatus.initial;
+            }
+            else if (this._status === 'active') {
+                return project.status === projectStatus.active;
+            }
+            else if (this._status === 'finished') {
+                return project.status === projectStatus.finished;
+            }
+            else {
+                return true;
+            }
+        });
+        return filteredProjects;
     }
 }
 //# sourceMappingURL=projectList.js.map

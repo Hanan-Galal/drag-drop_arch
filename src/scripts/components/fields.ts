@@ -19,6 +19,7 @@ export class Fields extends base<HTMLDivElement> {
 
         if (this._validateInputValues(titleValue, descValue)) {
             projectState.createProject(titleValue, descValue);
+            this._clearInputValues(titleInput, descInput);
         }
     }
 
@@ -52,4 +53,8 @@ export class Fields extends base<HTMLDivElement> {
 
         return true;
     }
+    private _clearInputValues(titleInput: HTMLInputElement, descInput: HTMLInputElement): void {
+        titleInput.value = '';
+        descInput.value = '';
+    }   
 }

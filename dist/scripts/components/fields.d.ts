@@ -6,5 +6,6 @@ export declare class Fields extends base<HTMLDivElement> {
     private _targetElementInputs;
     private _getInputValues;
     private _validateInputValues;
+    private _clearInputValues;
 }
 //# sourceMappingURL=fields.d.ts.map

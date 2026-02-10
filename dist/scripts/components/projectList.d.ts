@@ -4,6 +4,6 @@ export declare class projects extends base<HTMLDivElement> {
     constructor(_status: 'initial' | 'active' | 'finished');
     private renderProjectsList;
     private renderProjects;
-    private _createProjectItem;
+    private _filterProjectsStatus;
 }
 //# sourceMappingURL=projectList.d.ts.map

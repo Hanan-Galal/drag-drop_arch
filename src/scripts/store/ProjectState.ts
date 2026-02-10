@@ -20,7 +20,7 @@
 
 
             public createProject(title: string, description: string ): void {
-                const newProject = new ProjectRules(Math.random().toString(), title, description, projectStatus.intial);
+                const newProject = new ProjectRules(Math.random().toString(), title, description, projectStatus.initial);
                 this._projects.push(newProject);
                 this._runListeners();
 }

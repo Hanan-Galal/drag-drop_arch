@@ -12,7 +12,6 @@ export class base<T extends HTMLElement>  {
     ) {
        
       const [template, hostElement] = this._targetElement(this._templateId, this._hostElementId);
-
         const templateContent = document.importNode(template.content, true);
         this._element = templateContent.firstElementChild as T;
 

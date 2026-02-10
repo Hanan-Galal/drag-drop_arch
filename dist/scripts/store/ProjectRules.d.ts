@@ -4,6 +4,7 @@ export declare class ProjectRules {
     title: string;
     description: string;
     status: projectStatus;
+    id: string;
     constructor(ID: string, title: string, description: string, status: projectStatus);
 }
 //# sourceMappingURL=ProjectRules.d.ts.map

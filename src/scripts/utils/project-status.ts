@@ -1,5 +1,5 @@
  export enum projectStatus {
-    intial,
-    Active,
-    Finished
+    initial,
+    active,
+    finished
 }

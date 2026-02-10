@@ -15,6 +15,7 @@ export class Fields extends base {
         const [titleValue, descValue] = this._getInputValues(titleInput, descInput);
         if (this._validateInputValues(titleValue, descValue)) {
             projectState.createProject(titleValue, descValue);
+            this._clearInputValues(titleInput, descInput);
         }
     }
     _targetElementInputs() {
@@ -42,6 +43,10 @@ export class Fields extends base {
             return false;
         }
         return true;
+    }
+    _clearInputValues(titleInput, descInput) {
+        titleInput.value = '';
+        descInput.value = '';
     }
 }
 //# sourceMappingURL=fields.js.map
