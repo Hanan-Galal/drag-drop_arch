@@ -1,5 +1,5 @@
 @use "../vars/variables" as *;
-@use "../vars/raduis" as *;
+@use "../vars/_radius" as *  ;
 
 form {
   background-color: $bg-main-c;

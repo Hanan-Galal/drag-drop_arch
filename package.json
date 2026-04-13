@@ -11,6 +11,9 @@
   "scripts": {
     "start": "lite-server --baseDir=./dist",
     "build": "tsc",
-    "sass": "sass --watch src/scss:dist/main.css"
+    "type": "tsc --watch",
+
+    "sass": "sass --watch src/sass:dist/css"
+
   }
 }

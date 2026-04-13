@@ -2,6 +2,7 @@ declare class ProjectState {
     private static _instance;
     private _projects;
     private _listeners;
+    private _localStorageProjects;
     private constructor();
     static getInstance(): ProjectState;
     createProject(title: string, description: string): void;

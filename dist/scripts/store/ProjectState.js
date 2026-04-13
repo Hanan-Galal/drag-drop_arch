@@ -4,6 +4,8 @@ class ProjectState {
     constructor() {
         this._projects = [];
         this._listeners = [];
+        this._localStorageProjects = localStorage.getItem('projects') ? JSON.parse(localStorage.getItem('projects')) : [];
+        this._projects = this._localStorageProjects;
     }
     static getInstance() {
         if (!this._instance) {
@@ -15,6 +17,7 @@ class ProjectState {
         const newProject = new ProjectRules(Math.random().toString(), title, description, projectStatus.initial);
         this._projects.push(newProject);
         this._runListeners();
+        localStorage.setItem('projects', JSON.stringify(this._projects));
     }
     _runListeners() {
         for (const listener of this._listeners) {

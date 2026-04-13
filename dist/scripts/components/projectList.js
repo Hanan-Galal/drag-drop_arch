@@ -8,6 +8,12 @@ export class projects extends base {
         super('list', 'app', false, `${_status}-projects`);
         this._status = _status;
         this.renderProjectsList();
+        if (JSON.parse(localStorage.getItem('projects'))) {
+            const storedProjects = JSON.parse(localStorage.getItem('projects'));
+            const filteredStoredProjects = this._filterProjectsStatus(storedProjects);
+            this.renderProjects(filteredStoredProjects);
+        }
+        ;
         projectState.pushListener((projects) => {
             const filteredProjects = this._filterProjectsStatus(projects);
             this.renderProjects(filteredProjects);

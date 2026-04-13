@@ -10,20 +10,26 @@ export class projects extends base<HTMLDivElement> {
     
       super('list', 'app', false, `${_status}-projects`);
       this.renderProjectsList();
+        if(JSON.parse(localStorage.getItem('projects')!)){
+            const storedProjects: ProjectRules[] = JSON.parse(localStorage.getItem('projects')!);
+            const filteredStoredProjects = this._filterProjectsStatus(storedProjects);
+            this.renderProjects(filteredStoredProjects);
+      };
       projectState.pushListener((projects: ProjectRules[]) => {
             const filteredProjects = this._filterProjectsStatus(projects);
         this.renderProjects(filteredProjects);
-      });
-
+    
+     });
     }
-    private renderProjectsList(): void {
+      private renderProjectsList(): void {
         const title=this._element.querySelector('.title')! as HTMLHeadingElement;
         title.textContent = this._status;
         const list=this._element.querySelector('ul')! as HTMLUListElement;
-    
+        
         list.id = `${this._status}-list`;
         title.textContent = `${this._status} Projects`;
 } 
+
 private renderProjects(projects: ProjectRules[]): void {
     const projectList=document.getElementById(`${this._status}-list`)! as HTMLUListElement;
     projectList.innerHTML = '';

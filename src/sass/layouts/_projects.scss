@@ -1,5 +1,5 @@
 @use '../vars/variables' as *;
-@use '../vars/raduis' as *;
+@use "../vars/_radius" as *  ;
 .projects{
     max-width: 300px;
    min-width: 230px;

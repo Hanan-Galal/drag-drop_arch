@@ -4,8 +4,10 @@
      private static _instance: ProjectState;
      private _projects: ProjectRules[] = [];
         private _listeners: Function[] = [];
+        private _localStorageProjects :ProjectRules[]=localStorage.getItem('projects') ? JSON.parse(localStorage.getItem('projects')!) : [];
         private constructor() {
-       
+            // Load projects from local storage if available
+            this._projects = this._localStorageProjects;
         }
         /**
          * @ desc This method is used to get the instance of the ProjectState class. It checks if an instance already exists, and if not, it creates a new one. This ensures that there is only one instance of the ProjectState class throughout the application.
@@ -22,7 +24,8 @@
             public createProject(title: string, description: string ): void {
                 const newProject = new ProjectRules(Math.random().toString(), title, description, projectStatus.initial);
                 this._projects.push(newProject);
-                this._runListeners();
+                this._runListeners(); 
+                localStorage.setItem('projects', JSON.stringify(this._projects));
 }
 private _runListeners(): void {
     for (const listener of this._listeners) {
