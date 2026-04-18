@@ -1,6 +1,6 @@
 export declare enum projectStatus {
-    initial = 0,
-    active = 1,
-    finished = 2
+    Inital = "Inital",
+    Active = "Active",
+    Finished = "Finished"
 }
 //# sourceMappingURL=project-status.d.ts.map

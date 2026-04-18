@@ -14,8 +14,21 @@ class ProjectState {
         return this._instance;
     }
     createProject(title, description) {
-        const newProject = new ProjectRules(Math.random().toString(), title, description, projectStatus.initial);
+        const newProject = new ProjectRules(Math.random().toString(), title, description, projectStatus.Inital);
         this._projects.push(newProject);
+        this._runListeners();
+    }
+    changeProjectStatus(projectId, newStatus) {
+        const project = this._projects.find(proj => proj.id === projectId);
+        if (project && project.status !== newStatus) {
+            project.status = newStatus;
+            this._runListeners();
+            localStorage.setItem('projects', JSON.stringify(this._projects));
+        }
+    }
+    deleteProjects(id) {
+        const projectsAfterDelete = this._projects.filter(project => project.id !== id);
+        this._projects = projectsAfterDelete;
         this._runListeners();
         localStorage.setItem('projects', JSON.stringify(this._projects));
     }

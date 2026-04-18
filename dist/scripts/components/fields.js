@@ -1,5 +1,6 @@
 import { projectState } from "../store/ProjectState.js";
 import { assignValidationInputs, handleValidationErrors } from "../utils/validation/validation_helpers.js";
+import { autoBind } from "./autoBind.js";
 import { base } from "./Base.js";
 export class Fields extends base {
     constructor() {

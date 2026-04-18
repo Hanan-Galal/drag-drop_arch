@@ -1,5 +1,6 @@
 import { projectState } from "../store/ProjectState.js";
 import { assignValidationInputs, handleValidationErrors } from "../utils/validation/validation_helpers.js";
+import { autoBind } from "./autoBind.js";
 import { base } from "./Base.js";
 
 export class Fields extends base<HTMLDivElement> {
@@ -7,11 +8,10 @@ export class Fields extends base<HTMLDivElement> {
         super('fields', 'app', true, 'form');
         this._addProject();
     }
-
+   
     private _addProject(): void {
         this._element.addEventListener('submit', this._handleAddProject.bind(this));
     }
-
     private _handleAddProject(event: Event) {
         event.preventDefault();
         const [titleInput, descInput] = this._targetElementInputs();
