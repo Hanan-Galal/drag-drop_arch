@@ -47,6 +47,8 @@ jobs:
         run: sass src/sass:dist/css
       - name: Copy index.html
         run: cp src/index.html dist/
+      - name: Copy images
+        run: cp -r src/sass/images dist/images
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
